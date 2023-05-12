@@ -5,6 +5,9 @@ const AddUsers = (props)=>{
   const [userAge, setUserAge] = useState('')
     const onSubmitHandler = (e)=>{
         e.preventDefault()
+        if(username.length === 0 || userAge<=0){
+            return
+        }
         props.addUser(username,userAge)
         // reset form using two way biding
         setUserAge('')
